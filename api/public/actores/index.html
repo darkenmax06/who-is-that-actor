@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actor</title>
+</head>
+
+<body>
+  <button id="refetch" >refetch movies</button>
+  <form id="form" enctype="multipart/form-data">
+    <input type="text" name="name">
+    <input type="text" name="description">
+    <input type="date" name="date">
+    <input type="file" name="image">
+    <button>send</button>
+  </form>
+  <h1>Actors</h1>
+  <div id="container">
+
+  </div>
+
+  <style> 
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      display: grid;
+      grid-template-columns: repeat( auto-fill,
+      minmax(200px,1fr));
+      gap: 8px;
+      grid-auto-rows: auto;
+      padding: 16px;
+    }
+
+    #container div{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    #container div h2{
+      display: inline-block;
+      height: 120px;
+      flex-shrink: 0;
+    }
+
+    #container div img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom;
+      aspect-ratio: 300/400;
+      border-radius: 8px;
+    }
+  </style>
+
+  <script>
+    const refetch = document.getElementById("refetch");
+    const form = document.getElementById("form");
+    const container = document.getElementById("container")
+
+    async function getMovies (){
+      const res = await fetch("/actor")
+      const movies = await res.json()
+      console.log(movies)
+
+      movies.forEach(movie => Movie(movie))
+    }
+    getMovies()
+
+    refetch.addEventListener("click", getMovies)
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      console.log(formData)
+
+      fetch("http://localhost:3000/actor", {
+        method: "POST",
+        body: formData
+      })
+        .then(res => res.json())
+        .then(res => {
+          console.log(res)
+          Movie(res)
+        })
+    })
+
+    function Movie ({imgUri,name}){
+      const div = document.createElement('div');
+      const img = document.createElement("img");
+      const h2 = document.createElement('h2');
+
+      img.setAttribute("src", imgUri )
+      h2.textContent = name
+
+      div.appendChild(img)
+      div.appendChild(h2)
+
+      container.appendChild(div)
+    }
+  </script>
+</body>
+
+</html>

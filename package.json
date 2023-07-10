@@ -1,0 +1,19 @@
+{
+  "name": "who-is-that-actor",
+  "version": "1.0.0",
+  "engines": {
+    "npm": "8.0.0"
+  },
+  "workspaces": [
+    "app",
+    "api"
+  ],
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "backend": "npm run dev --workspace=api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

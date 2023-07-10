@@ -1,0 +1,21 @@
+.results__container{
+  display: grid;
+  grid-template-columns: 300px;
+  grid-auto-rows: 40px;
+  list-style: none;
+  padding: 16px 0px;
+}
+
+.list__item a{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.list__item a img{
+  width: 30px;
+  height: 30px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px;
+}
