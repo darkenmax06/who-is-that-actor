@@ -1,0 +1,38 @@
+.results__container{
+  display: grid;
+  grid-auto-rows: 40px;
+  list-style: none;
+  padding: var(--s);
+  background-color: rgb(54, 49, 49);
+  border-radius: var(--s);
+}
+
+.list__item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list__item a{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.list__item .name{
+  max-width: 200px;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list__item a img{
+  width: 30px;
+  height: 30px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px;
+}

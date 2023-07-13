@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom"
+import "./listItem.css"
+
 const uri = "http://localhost:3000"
-import "../styles/listItem.css"
 
 function ListItem({ id, imgUri, name, type }) {
 
@@ -12,7 +13,7 @@ function ListItem({ id, imgUri, name, type }) {
     <li className="list__item" >
       <NavLink to={goTo}>
         <img src={uri + imgUri} alt={name} />
-        <h4> {name} </h4>
+        <h4 className="name" > {name} </h4>
       </NavLink>
     </li>
   )
@@ -22,6 +23,7 @@ function ListItem({ id, imgUri, name, type }) {
 function ResultsList({results}) {
 
   if (results?.length === 0) return <div> <h2>no se han encontrado resultados... </h2> </div>
+  else if (results == null) return null
 
   return (
     <ul className="results__container" > {

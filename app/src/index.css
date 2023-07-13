@@ -1,5 +1,69 @@
+@font-face {
+  font-family: Bold;
+  src: url("./assets/Montserrat-VariableFont_wght.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("./assets/Montserrat-VariableFont_wght.ttf");
+  font-weight: 500;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root{
+  /*--- Tamaños ---*/
+  --s: 8px;
+  --m: 16px;
+  --l: 32px;
+  --xl: 64px;
+  --xxl: 128px;
+
+  /*--- colores ---*/
+  --white:rgb(213, 222, 240);
+  --main-color: #0255F5;
+  --second-color: #292323;
+  
+}
+
+body{
+  color: var(--white);
+  background-color: var(--second-color);
+}
+
+h1{
+  font-family: Bold;
+  font-size: 39px;
+}
+
+h2{
+  font-family: Bold;
+  font-size: 33px;
+}
+
+h3{
+  font-family: Bold;
+  font-size: 28px;
+}
+
+h4{
+  font-family: Bold;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h5{
+  font-family: Bold;
+  font-size: 20px;
+}
+
+h6,a,span,p,li,input{
+  font-family: "Regular";
+  font-size: 16px;
+  line-height: 24px;
 }

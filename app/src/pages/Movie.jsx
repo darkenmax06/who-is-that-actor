@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import useMovie from "../hooks/useMovie"
 import Info from "../components/Info"
-import Anexos from "../components/Anexos"
+import CardList from "../components/CardList"
 
 function Movie  () {
   const {id } = useParams()
@@ -10,15 +10,19 @@ function Movie  () {
   if (loading) return "cargando..."
   if (error) return error
 
-  console.log(movie)
-
+  if (movie == null) return null
+//cambiar estos estilos
+  const styles ={
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  }
   return (
-    <section>
-      {movie && 
-      <>
+    <section style={styles} >
       <Info {...movie} />
-      <Anexos anexos={movie.actors} />
-      </>}
+      <CardList list={movie.actors} title={"Actores"}/>
     </section>
   )
 }

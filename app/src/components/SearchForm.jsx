@@ -1,33 +1,29 @@
-import { useEffect, useState } from "react"
-import {search} from "../services/searchServices"
+import useSearch from "../hooks/useSearch"
 import ResultsList from "./ResultsList"
+import "./searchForm.css"
+import { Search, X } from "lucide-react"
 
 function SearchForm() {
-  const [results,setResults] = useState(null)
-  const [value,setValue] = useState("")
+  const {value, setValue, results, reset} = useSearch()
 
-  useEffect(()=>{
-    const interval = setTimeout(()=>{
-      if (value){
-      search({value})
-      .then(res => setResults(res))
-      }
-    },1000)
-
-    return ()=> clearTimeout(interval)
-  },[value])
-
+  const changeIcons = value.length > 0 
+  ? <span className="x"onClick={reset}><X/></span>
+  : <Search strokeWidth={3} /> 
 
   return (
-    <div>
-      <form>
+    <div className="search" >
+      <form onSubmit={e => e.preventDefault()} >
         <input
+          id="search"
           type="text"
           value={value}
           placeholder="search movie or actor..."
           onChange={e => setValue(e.target.value)} />
+          { changeIcons }
       </form>
-      <ResultsList results={results} />
+      <div className="results">
+        <ResultsList results={results} />
+      </div>
     </div>
   )
 }

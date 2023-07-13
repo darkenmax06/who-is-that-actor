@@ -1,0 +1,13 @@
+.anexos{
+  padding: var(--m);
+  width: 100%;
+  max-width: 1000px;
+}
+
+.anexos .container{
+  margin-top: var(--l);
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: var(--m);
+}

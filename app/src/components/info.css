@@ -1,0 +1,47 @@
+.movies__info{
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--l);
+  padding: var(--xl) var(--m);
+}
+
+.movies__info .img__box{
+  grid-column: 1 / span 2;
+  aspect-ratio: 300/500;
+  width: 100%;
+}
+
+.movies__info .img__box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--s);
+}
+
+.movies__info .text__box{
+  grid-column: 3/span 3;
+  display: flex;
+  flex-direction: column;
+  gap: var(--l);
+}
+
+.movies__info .text__box ul{
+  padding-left: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.movies__info .text__box span{
+  font-family: "Bold";
+}
+
+@media (width <= 700px) {
+  .movies__info{
+    display: flex;
+    flex-direction: column;
+  }  
+}
