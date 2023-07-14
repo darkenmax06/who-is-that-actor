@@ -10,11 +10,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run bu",
     "backend": "npm run dev --workspace=api",
-    "front": "npm run dev --workspace=app"
+    "front": "npm run dev --workspace=app",
+    "dev": "npm run dev --workspace=api | npm run dev --workspace=app"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+  }
 }
-

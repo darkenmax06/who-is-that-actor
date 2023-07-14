@@ -1,1 +1,1 @@
-DELETE http://localhost:3000/movie/64ad955260b1fb85142bde7b
+DELETE http://localhost:3000/movies/64ad955260b1fb85142bde7b

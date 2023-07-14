@@ -1,1 +1,1 @@
-GET http://localhost:3000/actor/64ad98290b8d372bbd3133a1
+GET http://localhost:3000/actors/64ad98290b8d372bbd3133a1

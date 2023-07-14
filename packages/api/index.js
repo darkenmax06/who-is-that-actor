@@ -17,9 +17,9 @@ app.use(express.json())
 
 //routes
 app.use("/api",express.static(__dirname + "/public"))
-app.use("/movie", movieRoute)
-app.use("/search", searchRoute)
-app.use("/actor", actorRoute)
+app.use("/api/movies", movieRoute)
+app.use("/api/searchs", searchRoute)
+app.use("/api/actors", actorRoute)
 app.use(ErrorHandling)
 
 //server

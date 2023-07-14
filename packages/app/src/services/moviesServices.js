@@ -1,7 +1,7 @@
-const URI = "http://localhost:3000/movie"
+const URI = "/api/movies/"
 
 function getMovie ({id}){
-  return fetch(URI+"/id/"+id)
+  return fetch(URI + "/id/"+id)
   .then(async res=> {
     const json = await res.json()
     if (!res.ok) throw json.error
@@ -11,7 +11,7 @@ function getMovie ({id}){
 }
 
 function getMovies ({page=1,limit=10}){
-  return fetch(URI+"/pages/" + page + "/" + limit)
+  return fetch(URI + "/pages/" + page + "/" + limit)
   .then(async res=> {
     const json = await res.json()
     if (!res.ok) throw json.error

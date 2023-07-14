@@ -1,4 +1,4 @@
-GET http://localhost:3000/movie/pages/0/10/
+GET http://localhost:3000/movies/pages/0/10/
 Content-Type: application/json
 
 {
