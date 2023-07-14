@@ -1,1 +1,1 @@
-GET http://localhost:3000/movie/id/64a8a9410ad832e5bb388696
+GET http://localhost:3000/movies/id/64a8a9410ad832e5bb388696

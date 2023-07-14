@@ -1,18 +1,16 @@
 import { NavLink } from "react-router-dom"
 import "./listItem.css"
 
-const uri = "http://localhost:3000"
-
 function ListItem({ id, imgUri, name, type }) {
 
   const goTo = type === "actor"
-  ?"/actor/" + id
-  :"/movie/" + id
+  ?"/actors/" + id
+  :"/movies/" + id
 
   return (
     <li className="list__item" >
       <NavLink to={goTo}>
-        <img src={uri + imgUri} alt={name} />
+        <img src={"/api/" + imgUri} alt={name} />
         <h4 className="name" > {name} </h4>
       </NavLink>
     </li>

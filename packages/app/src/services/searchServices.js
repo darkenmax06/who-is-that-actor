@@ -1,4 +1,4 @@
-const URI = "http://localhost:3000/search"
+const URI = "/api/searchs/"
 
 const search = ({value:query}) =>{
   const options = {

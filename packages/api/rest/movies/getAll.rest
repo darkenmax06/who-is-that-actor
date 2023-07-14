@@ -1,1 +1,1 @@
-GET http://localhost:3000/movie
+GET http://localhost:3000/movies
