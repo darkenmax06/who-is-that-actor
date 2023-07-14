@@ -5,15 +5,16 @@
     "npm": "8.0.0"
   },
   "workspaces": [
-    "app",
-    "api"
+    "packages/*"
   ],
   "description": "",
   "main": "index.js",
   "scripts": {
-    "backend": "npm run dev --workspace=api"
+    "backend": "npm run dev --workspace=api",
+    "front": "npm run dev --workspace=app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC"
 }
+
