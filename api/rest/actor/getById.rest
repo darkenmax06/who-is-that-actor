@@ -1,1 +1,0 @@
-GET http://localhost:3000/actor/id/64a8aa900ad832e5bb38869a

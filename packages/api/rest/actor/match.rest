@@ -1,0 +1,7 @@
+POST http://localhost:3000/actor/match
+Content-Type: application/json
+
+{
+  "actorId":"64ad9aa6f3fc15a64dde091b",
+  "movieId": "64ad977446769bf53a0c9a8b"
+}

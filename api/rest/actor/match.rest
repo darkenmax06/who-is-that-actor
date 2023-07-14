@@ -1,7 +1,0 @@
-POST http://localhost:3000/actor/match
-Content-Type: application/json
-
-{
-  "actorId":"64a8aa900ad832e5bb38869a",
-  "movieId": "64a8a9410ad832e5bb388696"
-}
